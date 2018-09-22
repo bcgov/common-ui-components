@@ -1,0 +1,73 @@
+{
+  "name": "@bcgov/react-ui-components",
+  "version": "1.0.0",
+  "description": "common react components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bcgov/common-ui-components.git"
+  },
+  "author": "Patrick Simonian",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/bcgov/common-ui-components/issues"
+  },
+  "homepage": "https://github.com/bcgov/common-ui-components#readme",
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "autoprefixer": "^9.1.5",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^8.0.2",
+    "css-loader": "^1.0.0",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "eslint": "^5.6.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^23.6.0",
+    "postcss-loader": "^3.0.0",
+    "prettier": "^1.14.3",
+    "regenerator-runtime": "^0.12.1",
+    "style-loader": "^0.23.0",
+    "url-loader": "^1.1.1",
+    "webpack": "^4.19.1"
+  },
+  "jest": {
+    "transform": {
+      ".(js|jsx)": "babel-jest",
+      ".+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/config/fileTransformer.js"
+    },
+    "testRegex": "(\\.(test|spec))\\.(jsx|js)$",
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "moduleFileExtensions": [
+      "jsx",
+      "js",
+      "module.css",
+      ".css"
+    ],
+    "moduleNameMapper": {
+      "^react$": "gatsby-plugin-react-next/node_modules/react",
+      "^react-dom$": "gatsby-plugin-react-next/node_modules/react-dom",
+      "\\.module\\.(css|less)$": "identity-obj-proxy"
+    },
+    "collectCoverage": true,
+    "coverageReporters": [
+      "lcov",
+      "text",
+      "html"
+    ],
+    "setupFiles": [
+      "raf/polyfill",
+      "<rootDir>/src/setupTests.js"
+    ]
+  }
+}
