@@ -4,7 +4,9 @@
   "description": "common react components",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --env=jsdom",
+    "start": "webpack --watch",
+    "prettier": "prettier --write '{./,__{tests,mocks}__}/**/*.+(js|jsx)'"
   },
   "repository": {
     "type": "git",
@@ -22,14 +24,24 @@
   },
   "devDependencies": {
     "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
     "autoprefixer": "^9.1.5",
     "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^9.0.0",
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.2",
     "css-loader": "^1.0.0",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
     "eslint": "^5.6.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.11.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
     "postcss-loader": "^3.0.0",
@@ -37,7 +49,8 @@
     "regenerator-runtime": "^0.12.1",
     "style-loader": "^0.23.0",
     "url-loader": "^1.1.1",
-    "webpack": "^4.19.1"
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.0"
   },
   "jest": {
     "transform": {
@@ -55,8 +68,6 @@
       ".css"
     ],
     "moduleNameMapper": {
-      "^react$": "gatsby-plugin-react-next/node_modules/react",
-      "^react-dom$": "gatsby-plugin-react-next/node_modules/react-dom",
       "\\.module\\.(css|less)$": "identity-obj-proxy"
     },
     "collectCoverage": true,
