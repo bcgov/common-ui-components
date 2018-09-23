@@ -1,0 +1,47 @@
+.Hex {
+    position: relative;
+    width: 17.82em;
+    height: calc(17.82em / 1.6603639801);
+    background-color: rgba(255, 255, 255, .8);
+    border-left: solid .2em solid #ccc;
+    border-right: solid .2em solid #ccc;
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;   
+    margin: 5.89em .69em; 
+    box-sizing: border-box;
+    padding: 10px;
+    opacity: .85;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.Hex::after,
+.Hex::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    border-radius: inherit;
+    width: calc(17.56em / 1.4141922496);
+    height: calc(17.56em / 1.4141922496);
+    transform: scaleY(0.5774) rotate(-45deg);
+    background-color: inherit;
+    left: 2.38em;
+}
+
+/* allows any content inside the hex block to stack on top of before/after elements */
+.Hex > * {
+    position: relative;
+    z-index: 2;
+}
+.Hex::after {
+    bottom: -6.21em;
+    border-bottom: solid .27em #ccc;
+    border-left: solid .27em #ccc;
+}
+
+.Hex::before {
+    top: -6.21em;
+    border-top: solid .27em #ccc;
+    border-right: solid .27em #ccc;
+}

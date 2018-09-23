@@ -1,11 +1,12 @@
 const path = require('path');
 const autoprefixer = require('autoprefixer');
 const webpack = require('webpack');
+const paths = require('./config/paths');
 
 module.exports = {
   mode: 'production',
   devtool: 'cheap-module-source-map',
-  entry: './src/index.js',
+  entry: [path.resolve('./config/polyfills.js'), paths.appIndex],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
@@ -19,7 +20,10 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        use: [{ loader: 'babel-loader' }, { loader: 'eslint-loader' }],
+        use: [
+          { loader: 'babel-loader' }
+          // { loader: 'eslint-loader' }
+        ],
         exclude: /node_modules|dist/,
       },
       {
