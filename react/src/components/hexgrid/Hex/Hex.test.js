@@ -4,6 +4,6 @@ import Hex from './Hex';
 
 describe('Hex Component', () => {
   it('renders without crashing', () => {
-    shallow(<Hex>blah</Hex>);
+    shallow(<Hex styles={{}}>blah</Hex>);
   });
 });

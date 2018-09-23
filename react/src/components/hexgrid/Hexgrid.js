@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Radium from 'radium';
-import classes from './Hexgrid.css';
 import PropTypes from 'prop-types';
 import shortid from 'shortid';
+import classes from './Hexgrid.css';
 import Hex from './Hex/Hex';
 
 class Hexgrid extends Component {
@@ -36,7 +36,7 @@ class Hexgrid extends Component {
     );
   }
 
-  windowResized = e => {
+  windowResized = () => {
     this.setState({
       windowWidth: window.innerWidth,
     });
@@ -44,16 +44,17 @@ class Hexgrid extends Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.windowResized);
+    this.windowResized();
   }
 
   componentDidUnmount() {
     window.removeEventListener('resize', this.windowResized);
   }
   render() {
-    const style = { ...this.props.hexStyles };
+    const styles = this.props.hexStyles;
     //  loop over items and wrap in the Hex Component
     const hexs = this.props.items.map(i => (
-      <Hex key={shortid.generate()} style={style}>
+      <Hex key={shortid.generate()} styles={styles}>
         {i}
       </Hex>
     ));
