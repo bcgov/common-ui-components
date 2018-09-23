@@ -2,11 +2,13 @@
   "name": "@bcgov/react-ui-components",
   "version": "1.0.0",
   "description": "common react components",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "jest --env=jsdom",
+    "test:watch": "jest --watch --env=jsdom",
     "start": "webpack --watch",
-    "prettier": "prettier --write '{./,__{tests,mocks}__}/**/*.+(js|jsx)'"
+    "prettier": "prettier --write '{./,__{tests,mocks}__}/**/*.+(js|jsx)'",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -18,12 +20,20 @@
     "url": "https://github.com/bcgov/common-ui-components/issues"
   },
   "homepage": "https://github.com/bcgov/common-ui-components#readme",
-  "dependencies": {
+  "peerDependencies": {
     "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react-dom": "^16.5.2",
+    "prop-types": "^15.6.2"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "shortid": "^2.2.13"
   },
   "devDependencies": {
     "@babel/core": "^7.1.0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "autoprefixer": "^9.1.5",
@@ -64,13 +74,15 @@
     "moduleFileExtensions": [
       "jsx",
       "js",
-      "module.css",
       ".css"
     ],
     "moduleNameMapper": {
-      "\\.module\\.(css|less)$": "identity-obj-proxy"
+      "\\.(css|less)$": "identity-obj-proxy"
     },
     "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,mjs}"
+    ],
     "coverageReporters": [
       "lcov",
       "text",

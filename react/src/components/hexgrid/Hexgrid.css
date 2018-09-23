@@ -1,0 +1,7 @@
+.Hexgrid {
+    width: 100%;
+}
+
+.Hexgrid .Inner {
+    display: flex;
+}

@@ -19,6 +19,7 @@
       "import"
     ],
     "rules": {
+      "react/destructuring-assignment": ["warn", "always", { "ignoreClassFields": true }],
       "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
       "linebreak-style": [
         "warn",

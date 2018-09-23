@@ -1,6 +1,4 @@
 import React from 'react';
+import Hexgrid from './components/Hexgrid/Hexgrid';
 
-const x1 = <div />;
-const x2 = <div>test</div>;
-
-export { x1, x2 };
+export { Hexgrid };
